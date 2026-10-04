@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 200 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 12%;
+
+    --primary: 168 55% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 90% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 350 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 168 55% 38%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --gradient-hero: linear-gradient(135deg, hsl(168 55% 38%), hsl(190 60% 45%));
+    --gradient-warm: linear-gradient(135deg, hsl(35 90% 55%), hsl(20 85% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(350 70% 60%), hsl(330 65% 55%));
+    --shadow-card: 0 4px 24px -4px hsl(200 25% 12% / 0.08);
+    --shadow-card-hover: 0 8px 32px -4px hsl(200 25% 12% / 0.14);
+    --shadow-glow: 0 0 40px -10px hsl(168 55% 38% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Prose markdown table styling */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.prose th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+}
+.prose tr:nth-child(even) {
+  background: hsl(var(--muted) / 0.3);
+}
